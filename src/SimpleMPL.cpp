@@ -2010,8 +2010,8 @@ double SimpleMPL::solve_graph_coloring(uint32_t comp_id, SimpleMPL::graph_type c
 		if(m_db->algo() == AlgorithmTypeEnum::DANCING_LINK){
 			double cost = 0;
 			if(m_db->use_stitch()){
-				//cost = solve_by_dancing_link_with_one_stitch(sg,vSubColor, comp_id);
-				cost = solve_by_dancing_link_GPU(sg,vSubColor);
+				cost = solve_by_dancing_link_with_one_stitch(sg,vSubColor, comp_id);
+				//cost = solve_by_dancing_link_GPU(sg,vSubColor);
 				}
 			else{ cost = solve_by_dancing_link_with_one_stitch(sg,vSubColor, comp_id);}
 #if RECORD > 1
@@ -3380,14 +3380,16 @@ void SimpleMPL::print_welcome() const
 {
   mplPrint(kNONE, "\n\n");
   mplPrint(kNONE, "=======================================================================\n");
-  mplPrint(kNONE, "                      OpenMPL - Version 1.1                          \n");
+  mplPrint(kNONE, "                      OpenMPL - Version 2.0                          \n");
   mplPrint(kNONE, "                                by                                   \n");  
-  mplPrint(kNONE, "                Yibo Lin, Bei Yu, Qi Sun and  David Z. Pan           \n");
-  mplPrint(kNONE, "               ECE Department, University of Texas at Austin         \n");
+  mplPrint(kNONE, "              Wei LI, Qi Sun, Yibo Lin, Bei Yu and  David Z. Pan     \n");
   mplPrint(kNONE, "               CSE Department, Chinese University of Hong Kong       \n");
-  mplPrint(kNONE, "                         Copyright (c) 2018                          \n");
-  mplPrint(kNONE, "            Contact Authors:  {yibolin,dpan}@cerc.utexas.edu         \n");
-  mplPrint(kNONE, "                              {byu, qsun}@cse.cuhk.edu.hk            \n");
+  mplPrint(kNONE, "				  		CSE Department, Peking University				\n");
+  mplPrint(kNONE, "               ECE Department, University of Texas at Austin         \n");
+  mplPrint(kNONE, "                         Copyright (c) 2019                          \n");
+  mplPrint(kNONE, "            Contact Authors:  {wli, qsun, byu}@cse.cuhk.edu.hk       \n");
+  mplPrint(kNONE, "								  yibolin@pku.edu.cn					\n");
+  mplPrint(kNONE, "                               dpan@cerc.utexas.edu   				\n");
   mplPrint(kNONE, "=======================================================================\n");
 }
 

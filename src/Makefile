@@ -9,11 +9,11 @@ DBG = 0
 # default GPROF is off, used to enable runtime profiling
 GPROF = 0
 # default GUROBI is off 
-GUROBI = 1
+GUROBI = 0
 # default LEMONCBC is off 
 LEMONCBC = 0
 # default CSDP is off 
-CSDP = 1
+CSDP = 0
 
 UNAME_S = $(shell uname -s)
 ifeq ($(UNAME_S), Linux)

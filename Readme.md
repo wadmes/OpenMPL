@@ -8,7 +8,7 @@
 ### How To Compile
 
 ```bash
-$ git clone https://github.com/limbo018/OpenMPL.git
+$ git clone https://github.com/wadmes/OpenMPL.git
 $ cd OpenMPL/src/mpl/
 $ make
 ```
@@ -29,7 +29,7 @@ CSDP = 0
 
 ### Features
  * Contact or metal layer decomposition 
- * No stitching
+ * Stitch insertion supported
  * Support 3 or 4 coloring 
  * Density control
  * Multi-threading
@@ -38,7 +38,7 @@ CSDP = 0
      ILP (Gurobi or Lemon CBC), 
      SDP (Csdp API), 
      LP  (Gurobi API)
- * Dancing Links
+ * Dancing Links (own implementation)
 
 The Csdp API used in OpenMPL has been modified and built for threading safety at high level. 
 
@@ -68,7 +68,7 @@ A table of options :
 -stitch (false)              toggle controlling stitch insertion, default is false
 -dbg_comp_id (4294967295)    debug component id
 -use_stitch 				 use stitch to avoid conflict
-gen_stitch					 generate stitch candidate
+-gen_stitch					 generate stitch candidate
 ```
 
 One exmaple : /bin/run.sh.
@@ -76,8 +76,9 @@ One exmaple : /bin/run.sh.
 ### Possible Compiler Problems
 
 + default CFLAGS of boost and gurobi are different in newest version
-  + downgrade the boost version
-
+  
++ downgrade the boost version
+  
 + ```
   SimpleMPL.cpp:461:5: error: ‘graph_simplification_type’ has no member named ‘set_isVDDGND’
   ```
@@ -90,11 +91,12 @@ One exmaple : /bin/run.sh.
 
 ### Authors
 
-| Name         | Affiliation         | email                                                     |
-| ------------ | ------------------- | --------------------------------------------------------- |
-| Yibo Lin     | ECE Dept, UT Austin | [yibolin@utexas.edu](mailto:yibolin@utexas.edu) |
-| Bei Yu       | CSE Dept, CUHK      | [byu@cse.cuhk.edu.hk](mailto:byu@cse.cuhk.edu.hk)         |
-| Qi Sun       | CSE Dept, CUHK      | [qsun@cse.cuhk.edu.hk](mailto:qsun@cse.cuhk.edu.hk)       |
-| David Z. Pan | ECE Dept, UT Austin | [dpan@ece.utexas.edu](mailto:dpan@ece.utexas.edu)         |
+| Name         | Affiliation                 | email                                               |
+| ------------ | --------------------------- | --------------------------------------------------- |
+| Yibo Lin     | CSE Dept, Peking University | [yibolin@utexas.edu](mailto:yibolin@pku.edu.cn)     |
+| Bei Yu       | CSE Dept, CUHK              | [byu@cse.cuhk.edu.hk](mailto:byu@cse.cuhk.edu.hk)   |
+| Qi Sun       | CSE Dept, CUHK              | [qsun@cse.cuhk.edu.hk](mailto:qsun@cse.cuhk.edu.hk) |
+| David Z. Pan | ECE Dept, UT Austin         | [dpan@ece.utexas.edu](mailto:dpan@ece.utexas.edu)   |
+| Wei Li       | CSE Dept, CUHK              | [wli@cse.cuhk.edu.hk](mailto:wli@cse.cuhk.edu.hk)   |
 
 

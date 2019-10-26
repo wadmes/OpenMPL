@@ -37,5 +37,6 @@
     -color_num 3 \
     -algo DL\
     -thread_num 8\
-     -use_stitch gen_stitch\
+     -use_stitch \
+     -gen_stitch\
   #   -dbg_comp_id 10096
